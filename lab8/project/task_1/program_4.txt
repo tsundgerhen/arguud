@@ -1,0 +1,21 @@
+int x = 0;
+int y = 0;
+
+void thread1() {
+    if (y < 7) {
+        x = 12;
+    }
+}
+
+void thread2() {
+    if (x > 0) {
+        y = 7;
+    }
+}
+
+	
+************************QUESTIONS***************************
+Data race: YES
+lines numbers: in x variable's memory addres data race occur in 6th, 11th lines of the code; in y variable's memory addres data race occur in 5th, 12th lines od the code;
+variables: x, y;
+possible values of the variable "y" at the end of execution: if thread1 run first x = 12, y= 7; of thread2 run first x = 12, y = 0 
